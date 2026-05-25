@@ -19,7 +19,7 @@ The dataset contains retail transaction data including:
     Total Sale
 **Data Cleaning**
     **Create Table**
-    CREATE TABLE Retail_Sales
+    ```CREATE TABLE Retail_Sales
     (
     transactions_id INT,
     sale_date DATE,
@@ -32,10 +32,10 @@ The dataset contains retail transaction data including:
     price_per_unit FLOAT,
     cogs FLOAT,
     total_sale FLOAT
-    );
+    );```
 **Check Null Values**
 
-SELECT *
+```SELECT *
 FROM retail_sales
 WHERE transactions_id IS NULL
     OR sale_date IS NULL
@@ -47,19 +47,19 @@ WHERE transactions_id IS NULL
     OR price_per_unit IS NULL
     OR quantiy IS NULL
     OR cogs IS NULL
-    OR total_sale IS NULL;
+    OR total_sale IS NULL;```
     
 **Rename Incorrect Column Name**
-    ALTER TABLE retail_sales
-    RENAME COLUMN quantiy TO Quantity;
+    ```ALTER TABLE retail_sales
+    RENAME COLUMN quantiy TO Quantity;```
 **Data Exploration**
 **Total Number of Sales**
-SELECT COUNT(*) AS Total_Sales
-FROM retail_sales;
+```SELECT COUNT(*) AS Total_Sales
+FROM retail_sales;```
 
 **Total Number of Customers**
-SELECT COUNT(DISTINCT customer_id) AS Unique_Customers
-FROM retail_sales;
+```SELECT COUNT(DISTINCT customer_id) AS Unique_Customers
+FROM retail_sales;```
 **Number of Categories**
 SELECT COUNT(DISTINCT category) AS Category
 FROM retail_sales;
